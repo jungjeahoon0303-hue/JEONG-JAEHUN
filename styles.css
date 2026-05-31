@@ -356,9 +356,11 @@
 /* ---------- WORKS GRID ---------- */
 .works-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1px;
   background: var(--hairline);
+  max-width: 50%;
+  margin: 48px auto 80px;
 }
 .works-item {
   background: var(--bg);
@@ -389,8 +391,11 @@
   letter-spacing: 0.01em;
 }
 
+@media (max-width: 1024px) {
+  .works-grid { max-width: 70%; }
+}
 @media (max-width: 768px) {
-  .works-grid { grid-template-columns: repeat(2, 1fr); }
+  .works-grid { max-width: 100%; grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 480px) {
   .works-grid { grid-template-columns: 1fr; }
