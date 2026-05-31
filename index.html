@@ -10,12 +10,12 @@
 
 <!-- ============ HEADER ============ -->
 <header class="site-header">
-  <a class="logo" data-page="works">
+  <a class="logo" href="index.html">
     <span class="full">KYO: Selected Works</span>
     <span class="short">KYO</span>
   </a>
   <nav class="site-nav">
-    <a data-page="works">Works</a>
+    <a href="works.html">Works</a>
     <a data-page="research">Research</a>
     <a data-page="writing">Writing</a>
     <a data-page="about">About</a>
@@ -25,10 +25,10 @@
 <!-- ============ MAIN ============ -->
 <main>
 
-  <!-- ====== PAGE: WORKS (home) ====== -->
+  <!-- ====== PAGE: WORKS (home featured) ====== -->
   <div class="page visible" id="page-works">
     <section class="featured">
-      <a data-page="post">
+      <a href="projects/project-001.html">
         <div class="featured-media">
           <img src="images/메인샷_upscale01.png" alt="" />
         </div>
@@ -39,43 +39,6 @@
           <span class="sub">Seoul, South Korea</span>
         </div>
       </a>
-    </section>
-  </div>
-
-  <!-- ====== PAGE: POST DETAIL ====== -->
-  <div class="page" id="page-post">
-    <div class="post-back">
-      <a data-page="works">← Back to Works</a>
-    </div>
-
-    <section class="post-hero">
-      <div class="post-hero-media">
-        <img src="images/메인샷_upscale01.png" alt="" />
-      </div>
-    </section>
-
-    <header class="post-header">
-      <div class="post-tag">Project · 001</div>
-      <h1 class="post-title">Project 001 — Untitled Work</h1>
-      <div class="post-meta">
-        <span>Location <strong>Seoul, South Korea</strong></span>
-        <span>Year <strong>2026</strong></span>
-        <span>Type <strong>Project</strong></span>
-      </div>
-    </header>
-
-    <article class="post-body">
-      <p>여기에 프로젝트 소개 본문을 적어주세요. 작업의 맥락, 의도, 진행 과정에 대한 짧은 글을 쓰면 자연스러워요.</p>
-      <p>본문은 충분히 길게 써도 좋고, 한두 문단으로 짧게 끝내도 괜찮아요. 절제된 톤을 유지하려면 묘사보다는 사실 위주로 적는 편이 좋습니다.</p>
-      <h2>Background</h2>
-      <p>프로젝트의 배경, 클라이언트, 기간 등을 적을 수 있는 섹션이에요.</p>
-      <h2>Approach</h2>
-      <p>접근 방식이나 디자인 결정, 사용한 재료/도구 등을 설명할 수 있어요.</p>
-    </article>
-
-    <section class="post-gallery">
-      <img src="images/메인샷_upscale01.png" alt="" />
-      <img src="images/메인샷_upscale01.png" alt="" />
     </section>
   </div>
 
@@ -187,7 +150,7 @@
     document.querySelectorAll('.page').forEach(p => p.classList.remove('visible'));
     const target = document.getElementById('page-' + pageId);
     if (target) target.classList.add('visible');
-    document.querySelectorAll('.site-nav a').forEach(a => {
+    document.querySelectorAll('.site-nav a[data-page]').forEach(a => {
       a.classList.toggle('active', a.dataset.page === pageId);
     });
     window.scrollTo(0, 0);
@@ -199,8 +162,6 @@
       navigate(el.dataset.page);
     });
   });
-
-  navigate('works');
 </script>
 
 </body>

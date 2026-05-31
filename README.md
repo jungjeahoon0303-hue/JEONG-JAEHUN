@@ -1,5 +1,72 @@
 # KYO: Selected Works — Portfolio
 
+---
+
+## 새 프로젝트 추가 방법
+
+### 1. 프로젝트 상세 페이지 만들기
+
+`projects/project-001.html`을 복사해서 `projects/project-002.html`로 저장하세요.
+
+```bash
+cp projects/project-001.html projects/project-002.html
+```
+
+`projects/project-002.html`을 열고 아래 항목을 수정하세요.
+
+- `<title>` — 프로젝트 이름으로 변경
+- `.post-tag` — 번호/카테고리 변경 (예: `Project · 002`)
+- `.post-title` — 프로젝트 제목 변경
+- `.post-meta` 안의 Location, Year, Type 값 변경
+- `<article class="post-body">` 안의 본문 내용 변경
+- 이미지 경로 변경 (`../images/...` 형식 유지)
+
+---
+
+### 2. works.html에 새 카드 추가하기
+
+`works.html`의 `.works-grid` 안에 아래 카드 블록을 복사해서 붙여 넣으세요.
+
+```html
+<!-- Project 002 -->
+<a class="works-item" href="projects/project-002.html">
+  <div class="works-item-media">
+    <img src="images/works/project-002-cover.jpg" alt="Project 002 제목" />
+  </div>
+  <div class="works-item-meta">
+    <div class="works-item-title">Project 002 — 두 번째 작업</div>
+  </div>
+</a>
+```
+
+이미지 파일은 `images/works/` 폴더에 넣고 `src` 경로를 맞춰주세요.
+
+---
+
+### 3. index.html의 featured 썸네일을 최신 프로젝트로 교체하기
+
+메인 페이지(`index.html`)의 featured 섹션은 가장 최근 프로젝트 한 장을 전면에 보여줍니다.
+새 프로젝트를 추가했다면 아래 부분을 수정해 최신 작업으로 교체하세요.
+
+```html
+<!-- index.html — #page-works 안의 featured 섹션 -->
+<section class="featured">
+  <a href="projects/project-002.html">   <!-- 링크를 최신 프로젝트로 변경 -->
+    <div class="featured-media">
+      <img src="images/works/project-002-cover.jpg" alt="" />  <!-- 이미지 경로 변경 -->
+    </div>
+    <div class="meta-line">
+      <span class="credit">c Photographer Name</span>
+      <span class="tag">Project</span>
+      <span class="title">Project 002 — 두 번째 작업</span>   <!-- 제목 변경 -->
+      <span class="sub">Seoul, South Korea</span>
+    </div>
+  </a>
+</section>
+```
+
+---
+
 정적 HTML/CSS 포트폴리오 사이트입니다. 별도 빌드 도구 없이 브라우저에서 바로 열거나, 정적 호스팅 서비스(GitHub Pages, Netlify, Vercel 등)에 그대로 배포할 수 있습니다.
 
 ---
